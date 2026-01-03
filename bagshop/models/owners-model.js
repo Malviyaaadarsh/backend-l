@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const userSchema = new mongoose.Schema({
+const ownerSchema = new mongoose.Schema({
 fullname: {
     type: String,
     required: true,
@@ -8,17 +8,13 @@ fullname: {
 },
 email: { type: String, unique: true },
 password:String,
-cart: {
+
+products: {
     type: Array,
     default: []
 },
-isadmin : Boolean,
-orders: {
-    type: Array,
-    default: []
-},
-contact:Number,
+gstin:String,
 picture:String,
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Owner', ownerSchema);
